@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amiri', serif;
+    color: white;
+    background: linear-gradient(45deg, red, blue);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+
+@media (orientation: landscape) {
+    body {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+    text-align: center;
+}
+
+@media (orientation: landscape) {
+    header {
+        width: 90%;
+        padding: 0;
+    }
+}
+
+.as {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.p {
+    font-size: 24px;
+    font-style: italic;
+    width: 90%;
+    margin-left: 15px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    color: #FF00FF;
+    background: white;
+    padding: 30px 60px;
+    border: none;
+    border-radius: 60px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 36px;
+    animation: button-color 3s infinite alternate-reverse;
+    transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    margin-bottom: 30px;
+}
+
+@media (orientation: landscape) {
+    button {
+        margin-bottom: 0;
+    }
+}
+
+button:active {
+    box-shadow: 30px -15px #FF00FF;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+@keyframes button-color {
+    0% {
+        color: red;
+    }
+
+    50% {
+        color: blue;
+    }
+
+    100% {
+        color: magenta;
+    }
+}
+
+.pop-up {
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(45deg, blue, red);
+    z-index: -1;
+
+    display: flex;
+}
+
+.rotateIcon {
+    opacity: 0;
+    position: absolute;
+    top: calc(50% - 48px);
+    left: calc(50% - 48px);
+}
+
+.cover-cont {
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animeImage {
+    height: 90%;
+    opacity: 0;
+}
+
+.again, .refresh {
+    opacity: 0;
+    font-family: inherit;
+}
+
+.again {
+    margin-bottom: 15px;
+}
+
+.button-cont {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+}
